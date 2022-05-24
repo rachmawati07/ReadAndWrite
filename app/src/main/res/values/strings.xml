@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ReadAndWrite</string>
+    <string name="btnView">View</string>
+    <string name="textFileData">File Data</string>
+    <string name="textFileName">File Name</string>
+    <string name="editFileName">Enter file name</string>
+    <string name="editData">Enter data</string>
+    <string name="btnSave">Save</string>
+    <string name="textNotes">NOTES</string>
+    <string name="imageSakura">TODO</string>
+    <string name="imageGolden">TODO</string>
+</resources>

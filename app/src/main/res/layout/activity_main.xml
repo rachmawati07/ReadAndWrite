@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff8e1"
+    tools:context=".MainActivity">
+
+    <!-- Ini adalah bagian button untuk menampilkan tombol pada projek ReadAndWrite
+         - Mempunyai id berupa btnView
+         - Tombol ini bertuliskan View
+         - Mempunyai ukuran teks sebesar 16sp dan dibold
+         - Dan dikelompokkan berdasarkan resource string agar tidak menampilkan error
+     -->
+    <Button
+        android:id="@+id/btnView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/editData"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="40dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/btnView"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Ini adalah bagian button untuk menampilkan tombol pada projek ReadAndWrite
+         - Mempunyai id berupa btnSave
+         - Tombol ini bertuliskan Save
+         - Mempunyai ukuran teks sebesar 16sp dan dibold
+         - Dan dikelompokkan berdasarkan resource string agar tidak menampilkan error
+    -->
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textFileData"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="48dp"
+        android:layout_marginBottom="40dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/btnSave"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Ini adalah bagian teks yang ditambahkan pada projek ReadAndWrite
+         - Mempunyai id berupa textNotes
+         - Untuk menampilkan keluaran berupa tulisan Notes
+         - Menggunakan font berupa sans-monospace
+         - Mempunyai ukuran teks sebesar 40sp dan dibold
+         - Dan dikelompokkan berdasarkan resource string agar tidak menampilkan error
+     -->
+    <TextView
+        android:id="@+id/textNotes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="132dp"
+        android:layout_marginEnd="144dp"
+        android:fontFamily="serif-monospace"
+        android:text="@string/textNotes"
+        android:textAlignment="center"
+        android:textColor="#050505"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Ini adalah bagian untuk memasukkan dan mengedit teks yang ditambahkan pada projek ReadAndWrite
+         - Mempunyai id berupa editFile
+         - Menggunakan input teks berupa textPersonName
+         - Dan dikelompokkan berdasarkan resource string agar tidak menampilkan error
+    -->
+    <EditText
+        android:id="@+id/editFile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textFileNama"
+        android:layout_alignStart="@+id/btnSave"
+        android:layout_alignBottom="@+id/textFileNama"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="232dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/editFileName"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColor="#150F0F"
+        android:textColorHint="#333333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Ini adalah bagian untuk memasukkan dan mengedit teks yang ditambahkan pada projek ReadAndWrite
+         - Mempunyai id berupa editData
+         - Menggunakan input teks berupa textPersonName
+         - Dan dikelompokkan berdasarkan resource string agar tidak menampilkan error
+     -->
+    <EditText
+        android:id="@+id/editData"
+        android:layout_width="210dp"
+        android:layout_height="91dp"
+        android:layout_below="@+id/editFile"
+        android:layout_alignBaseline="@+id/textFileData"
+        android:layout_alignStart="@+id/editFile"
+        android:layout_alignBottom="@+id/textFileData"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="32dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/editData"
+        android:inputType=""
+        android:lines="5"
+        android:textColorHint="#333333"
+        app:layout_constraintBottom_toTopOf="@+id/imageGolden"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editFile"
+        app:layout_constraintVertical_bias="0.346" />
+
+    <!-- Ini adalah bagian teks yang ditambahkan pada projek ReadAndWrite
+         - Mempunyai id berupa textFileData
+         - Untuk menampilkan keluaran berupa tulisan File Data
+         - Menggunakan font berupa sans-serif-black
+         - Mempunyai ukuran teks sebesar 20sp dan dibold
+         - Dan dikelompokkan berdasarkan resource string agar tidak menampilkan error
+    -->
+    <TextView
+        android:id="@+id/textFileData"
+        android:layout_width="87dp"
+        android:layout_height="41dp"
+        android:layout_below="@+id/textFileNama"
+        android:layout_alignEnd="@+id/textFileNama"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="60dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/textFileData"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:textColor="#0B0B0B"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textFileNama" />
+
+    <!-- Ini adalah bagian teks yang ditambahkan pada projek ReadAndWrite
+         - Mempunyai id berupa textFileNama
+         - Untuk menampilkan keluaran berupa tulisan File Nama
+         - Menggunakan font berupa sans-serif-black
+         - Mempunyai ukuran teks sebesar 20sp dan dibold
+         - Dan dikelompokkan berdasarkan resource string agar tidak menampilkan error
+    -->
+    <TextView
+        android:id="@+id/textFileNama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="136dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/textFileName"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:textColor="#101010"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageSakura" />
+
+    <!-- Ini adalah bagian untuk menampilkan gambar
+         - Mempunyai id berupa imageSakura
+         - Gambar yang ditampilkan berupa gambar ranting sakura kuning
+         - Gambar berasal dari drawble
+         - Tinggi gambar ialah 109dp dengan lebar 209dp
+         - Menggunakan contentDescription yang dikelompokkan pada string
+     -->
+    <ImageView
+        android:id="@+id/imageSakura"
+        android:layout_width="209dp"
+        android:layout_height="109dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="204dp"
+        android:contentDescription="@string/imageSakura"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sakurakuning" />
+
+    <!-- Ini adalah bagian untuk menampilkan gambar
+         - Mempunyai id berupa imageGolden
+         - Gambar yang ditampilkan berupa gambar sulur berwarna emas
+         - Gambar berasal dari drawble
+         - Tinggi gambar ialah 181dp dengan lebar 408dp
+         - Menggunakan contentDescription yang dikelompokkan pada string
+    -->
+    <ImageView
+        android:id="@+id/imageGolden"
+        android:layout_width="408dp"
+        android:layout_height="181dp"
+        android:layout_below="@+id/editData"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="104dp"
+        android:contentDescription="@string/imageGolden"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/golden"
+        tools:ignore="ImageContrastCheck" />
+</androidx.constraintlayout.widget.ConstraintLayout>
