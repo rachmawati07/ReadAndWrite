@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
         // Untuk memberikan fungsi klik listener pada btnView untuk membaca data
         btnView.setOnClickListener(View.OnClickListener {
             // Mengambil nama file dari editText filename
-            // Dan kemudian dikonversi dari teks menjadi string
+            // Dan kemudian dikonversi dari teks menjadi string dengan format txt
             val filename = fileName.text.toString()+".txt"
 
             // Mengecek nama file kosong atau tidak, jika tidak kosong maka program didalam if dijalankan
@@ -101,26 +101,27 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+        // Untuk memberikan fungsi klik listener pada btnDelete
         btnDelete.setOnClickListener(View.OnClickListener {
-
             try {
+                //Mengkonversi dari teks menjadi string dengan format txt
                 val filename = fileName.text.toString()+".txt"
-                //Mencari direktori file
+                // Untuk mencari direktori file
                 val dir = filesDir
-                //Menemukan file
+                // Untuk menemukan file
                 val file = File(dir, filename)
-                //file dihapus
+                // Untuk menghapus file
                 file.delete()
-                //set ulang hasil
+                // Untuk set ulang hasil
                 hasil = ""
                 //Menangkap error dan diabaikan
             }catch (e: Exception) {
-                //muncul pop up "Tidak bisa dihaspus"
+                // Akan muncul pop up "Tidak bisa dihapus"
                 Toast.makeText(this, "Tidak bisa dihapus", Toast.LENGTH_LONG).show()
                 e.printStackTrace()
             }
 
-            //bersihkan text
+            // Untuk membersihkan text
             fileName.text.clear()
             fileData.text.clear()
 
