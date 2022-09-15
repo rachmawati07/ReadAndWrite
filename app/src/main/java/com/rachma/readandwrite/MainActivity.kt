@@ -8,9 +8,10 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import java.io.*
-
+import com.rachma.readandwrite.databinding.ActivityMainBinding
 
 // Untuk mendeklarasikan kelas yang bernama MainActivity
+lateinit var binding: ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     // Untuk memanggil kelas super onCreate dalam pembuatan activity ini
@@ -27,6 +28,11 @@ class MainActivity : AppCompatActivity() {
         val btnSave = findViewById<Button>(R.id.btnSave)
         // Untuk mendeklarasikan variabel btnSave dan menentukan metode masukkan
         val btnView = findViewById<Button>(R.id.btnView)
+
+        val btnDelete = findViewById<Button>(R.id.btnDelete)
+
+        //Deklarasi nilai awal untuk variabel hasil
+        var hasil ="";
 
         // Untuk memberikan fungsi klik listener pada btnSave
         btnSave.setOnClickListener(View.OnClickListener {
@@ -70,7 +76,7 @@ class MainActivity : AppCompatActivity() {
         btnView.setOnClickListener(View.OnClickListener {
             // Mengambil nama file dari editText filename
             // Dan kemudian dikonversi dari teks menjadi string
-            val filename = fileName.text.toString()
+            val filename = fileName.text.toString()+".txt"
 
             // Mengecek nama file kosong atau tidak, jika tidak kosong maka program didalam if dijalankan
             if(filename.toString()!=null && filename.toString().trim()!=""){
@@ -88,10 +94,37 @@ class MainActivity : AppCompatActivity() {
                 //Menampilkan teks di editText fileData
                 fileData.setText(stringBuilder.toString()).toString()
 
-            // Jika nama file kosong maka akan menampilkan toast atau popup berupa file name cannot be blank
+                // Jika nama file kosong maka akan menampilkan toast atau popup berupa file name cannot be blank
             }else{
                 Toast.makeText(applicationContext,"file name cannot be blank",Toast.LENGTH_LONG).show()
+
             }
+        })
+
+        btnDelete.setOnClickListener(View.OnClickListener {
+
+            try {
+                val filename = fileName.text.toString()+".txt"
+                //Mencari direktori file
+                val dir = filesDir
+                //Menemukan file
+                val file = File(dir, filename)
+                //file dihapus
+                file.delete()
+                //set ulang hasil
+                hasil = ""
+                //Menangkap error dan diabaikan
+            }catch (e: Exception) {
+                //muncul pop up "Tidak bisa dihaspus"
+                Toast.makeText(this, "Tidak bisa dihapus", Toast.LENGTH_LONG).show()
+                e.printStackTrace()
+            }
+
+            //bersihkan text
+            fileName.text.clear()
+            fileData.text.clear()
+
+
         })
 
     }
